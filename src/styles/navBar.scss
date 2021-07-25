@@ -1,0 +1,16 @@
+@import "variables.scss";
+.container {
+  max-width: $max-container-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logo {
+    font-family: "Spirax";
+  }
+
+  .leftSideNav,
+  h4 {
+    display: none;
+  }
+}
