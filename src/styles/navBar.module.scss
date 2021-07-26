@@ -1,0 +1,79 @@
+@import "variables.scss";
+.container {
+  max-width: $max-container-width;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Montserrat";
+  padding: 0 $padding-phone;
+  margin: 0 auto;
+
+  .logo {
+    font-family: "Spirax";
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .rigthSideNav,
+  .hamburger {
+    font-size: 1.8rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 748px) {
+  .container {
+    padding: 0 $padding-tablet;
+
+    .logo {
+      font-size: 1.8rem;
+    }
+
+    .rigthSideNav {
+      display: flex;
+      font-weight: 300;
+      align-items: center;
+      h4 {
+        display: block;
+        font-weight: 600;
+        background-color: $secondary-color;
+        padding: 0.4rem 1rem;
+        border-radius: 0.4rem;
+        font-size: 0.9rem;
+        &:hover {
+          transition: 0.3s ease-in-out all;
+          color: white;
+          background-color: $secondary-color-hover;
+          cursor: pointer;
+        }
+      }
+      span {
+        margin-right: 3rem;
+        font-size: 18px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    .hamburger {
+      display: none;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 $padding-laptop;
+
+    .logo {
+      font-size: 35px;
+    }
+    h4 {
+      font-size: 16px;
+      padding: 0.5rem 1.2rem;
+    }
+  }
+}

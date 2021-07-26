@@ -1,0 +1,130 @@
+@import "variables.scss";
+
+.container {
+  max-width: $max-container-width;
+  padding: $padding-phone;
+  text-align: center;
+  font-family: "Montserrat";
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  .leftColumn {
+    h1 {
+      font-size: 1.8rem;
+      text-transform: capitalize;
+      max-width: 20rem;
+      margin: 1.5rem auto;
+      font-weight: 700;
+    }
+    p {
+      font-size: 1rem;
+      max-width: 15rem;
+      margin: 1rem auto;
+      opacity: 90%;
+    }
+    button {
+      font-family: "Montserrat";
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border: none;
+      background-color: $primary-color;
+      padding: 0.6rem 1.3rem;
+      border-radius: 0.4rem;
+      margin-top: 1.2rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    span {
+      display: none;
+    }
+  }
+  .heroSvg {
+    width: 16rem;
+    margin: 1rem auto;
+  }
+}
+
+@media (min-width: 590px) {
+  .container {
+    padding: $padding-tablet;
+    .leftColumn {
+      h1 {
+        font-size: 2.3rem;
+        max-width: 26rem;
+      }
+      p {
+        font-size: 1.3rem;
+        max-width: 20rem;
+      }
+      button {
+        padding: auto 2rem;
+      }
+    }
+    .heroSvg {
+      width: 20rem;
+    }
+  }
+}
+
+@media (min-width: 748px) {
+  .container {
+    flex-direction: row;
+    margin-top: 2rem;
+    .leftColumn {
+      text-align: left;
+
+      p {
+        margin: 2rem 0;
+      }
+      .callToAction {
+        display: flex;
+        align-items: baseline;
+        span {
+          display: flex;
+          margin-left: 1rem;
+          align-items: center;
+
+          .chevronIcon {
+            color: $primary-color;
+            margin-left: 0.5rem;
+          }
+        }
+      }
+    }
+    .heroSvg {
+      width: 18rem;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 $padding-laptop;
+    .leftColumn {
+      margin: 1rem 0;
+      h1 {
+        font-size: 50px;
+        max-width: 40rem;
+      }
+      p {
+        max-width: 30rem;
+      }
+      .callToAction {
+        button {
+          font-size: 1.5rem;
+          padding: 0.8rem 1.8rem;
+        }
+        span {
+          margin-left: 2.5rem;
+        }
+      }
+    }
+    .heroSvg {
+      width: 35rem;
+      margin: -2rem 0;
+    }
+  }
+}

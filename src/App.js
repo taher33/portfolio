@@ -1,6 +1,6 @@
 import Landing from "./pages/landing";
 import NavBar from "./components/navBar";
-import "./styles/app.scss";
+import {} from "./styles/app.module.scss";
 
 function App() {
   return (

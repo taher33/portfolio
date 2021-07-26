@@ -1,17 +1,22 @@
 import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
-import "../styles/navBar.scss";
+import {
+  container,
+  rigthSideNav,
+  logo,
+  hamburger,
+} from "../styles/navBar.module.scss";
 
 function NavBar() {
   return (
-    <div className="container">
-      <div className="leftSideNav">
+    <div className={container}>
+      <h2 className={logo}>Latreche</h2>
+      <div className={rigthSideNav}>
         <span>about</span>
         <span>my work</span>
+        <h4>get in touch</h4>
       </div>
-      <h2 className="logo">Latreche</h2>
-      <h4>Get in touch</h4>
-      <GiHamburgerMenu className="hamburger" />
+      <GiHamburgerMenu className={hamburger} />
     </div>
   );
 }
