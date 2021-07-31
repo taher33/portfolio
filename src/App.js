@@ -3,6 +3,7 @@ import NavBar from "./components/navBar";
 import {} from "./styles/app.module.scss";
 import Projects from "./pages/projects";
 import Skills from "./pages/skills";
+import About from "./pages/about";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Landing />
       <Projects />
       <Skills />
+      <About />
     </div>
   );
 }

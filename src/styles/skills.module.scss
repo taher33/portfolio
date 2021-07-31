@@ -1,13 +1,31 @@
 @import "variables.scss";
 
+.bg {
+  background-color: #e8fffe;
+  width: 100vw;
+  padding: 1.5rem 0;
+  margin: 2rem 0;
+}
+
 .container {
-  max-width: $max-container-width;
+  max-width: 900px;
   font-family: "Montserrat";
   padding: 0 $padding-phone;
   margin: 0 auto;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 2.5rem;
+  }
+  h3 {
+    font-size: 20px;
+  }
   .skills {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     div {
       margin-right: 4rem;
       font-size: 16px;
@@ -20,6 +38,59 @@
       }
       span {
         margin-left: 1rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 590px) {
+  .container {
+    padding: 0 $padding-tablet;
+
+    h2 {
+      font-size: 28px;
+    }
+    h3 {
+      font-size: 22px;
+    }
+    .skills {
+      div {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    padding: 0 $padding-tablet;
+
+    h2 {
+      font-size: 32px;
+    }
+    h3 {
+      font-size: 26px;
+    }
+    .skills {
+      div {
+        font-size: 22px;
+      }
+    }
+  }
+}
+@media (min-width: 900px) {
+  .container {
+    padding: 0 $padding-laptop;
+
+    h2 {
+      font-size: 40px;
+    }
+    h3 {
+      font-size: 28px;
+    }
+    .skills {
+      div {
+        font-size: 24px;
       }
     }
   }

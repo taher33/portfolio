@@ -1,0 +1,81 @@
+@import "variables.scss";
+.container {
+  max-width: $max-container-width;
+  font-family: "Montserrat";
+  padding: 0 $padding-phone;
+  margin: 3rem auto;
+
+  .leftColumn {
+    h2 {
+      font-size: 30px;
+      text-transform: capitalize;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-size: 18px;
+    }
+  }
+  .svg {
+    max-width: 500px;
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+}
+
+@media (min-width: 590px) {
+  .container {
+    padding: 0 $padding-tablet;
+  }
+}
+
+@media (min-width: 800px) {
+  .container {
+    padding: 0 $padding-tablet;
+    display: flex;
+    align-items: center;
+
+    .leftColumn {
+      h2 {
+        font-size: 35px;
+      }
+      p {
+        font-size: 22px;
+      }
+    }
+    .svg {
+      width: 120rem;
+      margin-left: 0;
+      transform: translate(0);
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 $padding-laptop;
+
+    .svg {
+      width: 120rem;
+      margin-left: 0;
+      transform: translate(0);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    .leftColumn {
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 24px;
+      }
+    }
+    .svg {
+      width: 120rem;
+      margin-left: 0;
+      transform: translate(0);
+    }
+  }
+}

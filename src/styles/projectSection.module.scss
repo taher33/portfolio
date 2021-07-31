@@ -9,6 +9,16 @@
     font-size: 24px;
     text-transform: capitalize;
     margin-bottom: 1.7rem;
+    position: relative;
+    &:before {
+      content: "";
+      width: 2.5rem;
+      height: 6px;
+      background-color: $primary-color;
+      position: absolute;
+      border-radius: 5rem;
+      top: -0.5rem;
+    }
   }
 }
 
@@ -25,6 +35,17 @@
     h2 {
       font-size: 26px;
       margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    h2 {
+      font-size: 40px;
+      &::before {
+        width: 3.7rem;
+      }
     }
   }
 }
