@@ -4,6 +4,7 @@ import {} from "./styles/app.module.scss";
 import Projects from "./pages/projects";
 import Skills from "./pages/skills";
 import About from "./pages/about";
+import ContactMe from "./pages/contact";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Projects />
       <Skills />
       <About />
+      <ContactMe />
     </div>
   );
 }
