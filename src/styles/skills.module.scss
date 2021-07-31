@@ -1,0 +1,26 @@
+@import "variables.scss";
+
+.container {
+  max-width: $max-container-width;
+  font-family: "Montserrat";
+  padding: 0 $padding-phone;
+  margin: 0 auto;
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      margin-right: 4rem;
+      font-size: 16px;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+
+      .icon {
+        font-size: 30px;
+      }
+      span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}

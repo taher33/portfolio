@@ -15,7 +15,9 @@
     }
   }
 
-  .rigthSideNav,
+  .rigthSideNav {
+    display: none;
+  }
   .hamburger {
     font-size: 1.8rem;
     &:hover {

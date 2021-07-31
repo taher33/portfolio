@@ -1,0 +1,30 @@
+@import "variables.scss";
+
+.container {
+  max-width: $max-container-width;
+  font-family: "Montserrat";
+  padding: 0 $padding-phone;
+  margin: 0 auto;
+  h2 {
+    font-size: 24px;
+    text-transform: capitalize;
+    margin-bottom: 1.7rem;
+  }
+}
+
+@media (min-width: 590px) {
+  .container {
+    padding: 0 $padding-tablet;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 0 $padding-laptop;
+
+    h2 {
+      font-size: 26px;
+      margin-bottom: 0;
+    }
+  }
+}

@@ -8,7 +8,16 @@
   display: flex;
   flex-direction: column;
   margin: 0 auto;
-
+  position: relative;
+  .blob {
+    position: absolute;
+    top: -420px;
+    left: -150px;
+    z-index: -1;
+    width: 600px;
+    height: 957px;
+    display: none;
+  }
   .leftColumn {
     h1 {
       font-size: 1.8rem;
@@ -23,40 +32,52 @@
       margin: 1rem auto;
       opacity: 90%;
     }
-    button {
-      font-family: "Montserrat";
-      color: white;
-      font-weight: bold;
-      font-size: 1.2rem;
-      border: none;
-      background-color: $primary-color;
-      padding: 0.6rem 1.3rem;
-      border-radius: 0.4rem;
-      margin-top: 1.2rem;
-      &:hover {
-        cursor: pointer;
+    .callToAction {
+      button {
+        font-family: "Montserrat";
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border: none;
+        background-color: $primary-color;
+        padding: 0.8rem 3rem;
+        border-radius: 0.4rem;
+        margin-top: 1.2rem;
+        transition: all ease 0.3s;
+
+        &:hover {
+          cursor: pointer;
+          background-color: yellow;
+        }
       }
-    }
-    span {
-      display: none;
+      span {
+        display: none;
+      }
     }
   }
   .heroSvg {
     width: 16rem;
-    margin: 1rem auto;
+    z-index: -4;
+    margin: -14rem auto;
   }
 }
 
 @media (min-width: 590px) {
   .container {
     padding: $padding-tablet;
+
+    .blob {
+      left: -200px;
+      width: 850px;
+      height: 1050px;
+    }
     .leftColumn {
       h1 {
         font-size: 2.3rem;
         max-width: 26rem;
       }
       p {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
         max-width: 20rem;
       }
       button {
@@ -72,6 +93,14 @@
 @media (min-width: 748px) {
   .container {
     flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 4rem;
+    .blob {
+      left: -250px;
+
+      height: 1050px;
+    }
+
     margin-top: 2rem;
     .leftColumn {
       text-align: left;
@@ -82,10 +111,14 @@
       .callToAction {
         display: flex;
         align-items: baseline;
+        .button {
+          padding: 1rem 4rem;
+        }
         span {
           display: flex;
           margin-left: 1rem;
           align-items: center;
+          font-weight: 600;
 
           .chevronIcon {
             color: $primary-color;
@@ -95,7 +128,8 @@
       }
     }
     .heroSvg {
-      width: 18rem;
+      width: 50%;
+      margin-top: -10rem;
     }
   }
 }
@@ -103,28 +137,60 @@
 @media (min-width: 900px) {
   .container {
     padding: 0 $padding-laptop;
+    // margin-top: 2rem;
+    .blob {
+      top: -500px;
+      width: 1000px;
+      height: 1200px;
+    }
     .leftColumn {
-      margin: 1rem 0;
+      margin: 2rem 0;
       h1 {
-        font-size: 50px;
-        max-width: 40rem;
+        font-size: 40px;
+        max-width: 30rem;
+        margin-bottom: 2rem;
       }
       p {
+        font-size: 22px;
         max-width: 30rem;
+        margin-bottom: 3.2rem;
       }
       .callToAction {
         button {
-          font-size: 1.5rem;
-          padding: 0.8rem 1.8rem;
+          font-size: 1.6rem;
+          padding: 1rem 3rem;
         }
         span {
+          font-size: 1.2rem;
           margin-left: 2.5rem;
         }
       }
     }
     .heroSvg {
-      width: 35rem;
-      margin: -2rem 0;
+      width: 50%;
+      margin: -10rem 0;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    margin-top: 0;
+    .leftColumn {
+      h1 {
+        font-size: 55px;
+        max-width: 45rem;
+      }
+      p {
+        font-size: 24px;
+      }
+      .callToAction {
+        button {
+          font-size: 30px;
+        }
+      }
+    }
+    .heroSvg {
+      margin-top: -3rem;
     }
   }
 }

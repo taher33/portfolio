@@ -5,13 +5,16 @@ import {
   heroSvg,
   chevronIcon,
   callToAction,
+  blob,
 } from "../styles/landing.module.scss";
 import { FaChevronRight } from "react-icons/fa";
-import HeroSectionSvg from "../components/hero-section-svg";
+import HeroSvg from "../components/hero-section-svg";
+import Blob from "../components/blob";
 
 function Landing() {
   return (
     <section className={container}>
+      <Blob classN={blob} />
       <div className={leftColumn}>
         <h1>give your clients the web experience they deserve</h1>
         <p>
@@ -25,7 +28,7 @@ function Landing() {
           </span>
         </div>
       </div>
-      <HeroSectionSvg heroSvg={heroSvg} />
+      <HeroSvg heroSvg={heroSvg} />
     </section>
   );
 }
