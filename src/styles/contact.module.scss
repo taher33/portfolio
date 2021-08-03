@@ -25,7 +25,7 @@
       margin: 1rem 0 1.2rem;
       display: block;
       font-size: 18px;
-      padding: 0.3rem 0.4rem;
+      padding: 0.5rem 0.6rem;
       border-radius: 0.3rem;
       background-color: #2b2b2b;
       border: none;
@@ -42,7 +42,7 @@
       margin: 1rem 0 1.2rem;
       display: block;
       font-size: 18px;
-      padding: 0.3rem 0.4rem;
+      padding: 0.5rem 0.4rem;
       border-radius: 0.3rem;
       background-color: #2b2b2b;
       border: none;
@@ -55,12 +55,13 @@
 
     button {
       font-family: "Montserrat";
+      color: #2b2b2b;
       border: none;
       outline: none;
       font-weight: bold;
       font-size: 20px;
-      padding: 0.6rem 1rem;
-      border-radius: 2rem;
+      padding: 0.8rem 1rem;
+      border-radius: 3rem;
       background-color: $primary-color;
       margin: 1rem 0;
     }
@@ -78,6 +79,18 @@
 
       span {
         margin-left: 1rem;
+      }
+    }
+    .icons {
+      margin-top: 2rem;
+      a {
+        height: 24px;
+        width: 24px;
+        margin-right: 1rem;
+        svg {
+          color: white;
+          font-size: 24px;
+        }
       }
     }
   }

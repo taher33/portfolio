@@ -33,6 +33,9 @@
       opacity: 90%;
     }
     .callToAction {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       button {
         font-family: "Montserrat";
         color: white;
@@ -41,17 +44,25 @@
         border: none;
         background-color: $primary-color;
         padding: 0.8rem 3rem;
-        border-radius: 0.4rem;
+        border-radius: 0.7rem;
         margin-top: 1.2rem;
         transition: all ease 0.3s;
 
         &:hover {
           cursor: pointer;
-          background-color: yellow;
+          background-color: $secondary-color-hover;
         }
       }
       span {
-        display: none;
+        display: flex;
+        margin: 1rem 0;
+        align-items: center;
+        font-weight: 600;
+
+        .chevronIcon {
+          color: $primary-color;
+          margin-left: 0.5rem;
+        }
       }
     }
   }
@@ -66,11 +77,6 @@
   .container {
     padding: $padding-tablet;
 
-    .blob {
-      left: -200px;
-      width: 850px;
-      height: 1050px;
-    }
     .leftColumn {
       h1 {
         font-size: 2.3rem;
@@ -80,6 +86,7 @@
         font-size: 1.2rem;
         max-width: 20rem;
       }
+
       button {
         padding: auto 2rem;
       }
@@ -92,38 +99,15 @@
 
 @media (min-width: 748px) {
   .container {
-    flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 4rem;
-    .blob {
-      left: -250px;
-
-      height: 1050px;
-    }
-
     margin-top: 2rem;
     .leftColumn {
-      text-align: left;
-
       p {
-        margin: 2rem 0;
+        max-width: 25rem;
       }
       .callToAction {
-        display: flex;
-        align-items: baseline;
         .button {
           padding: 1rem 4rem;
-        }
-        span {
-          display: flex;
-          margin-left: 1rem;
-          align-items: center;
-          font-weight: 600;
-
-          .chevronIcon {
-            color: $primary-color;
-            margin-left: 0.5rem;
-          }
         }
       }
     }
@@ -134,31 +118,37 @@
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 1000px) {
   .container {
     padding: 0 $padding-laptop;
-    // margin-top: 2rem;
+    flex-direction: row;
+    justify-content: space-between;
     .blob {
       top: -500px;
       width: 1000px;
       height: 1200px;
     }
     .leftColumn {
+      text-align: left;
+
       margin: 2rem 0;
       h1 {
         font-size: 40px;
         max-width: 30rem;
-        margin-bottom: 2rem;
+        margin-bottom: 1.3rem;
       }
       p {
         font-size: 22px;
         max-width: 30rem;
-        margin-bottom: 3.2rem;
+        margin-bottom: 1.2rem;
+        margin-left: 0;
       }
       .callToAction {
+        flex-direction: row;
+        align-items: baseline;
         button {
           font-size: 1.6rem;
-          padding: 1rem 3rem;
+          padding: 0.9rem 2.5rem;
         }
         span {
           font-size: 1.2rem;
@@ -174,7 +164,7 @@
 }
 @media (min-width: 1200px) {
   .container {
-    margin-top: 0;
+    margin-top: 3rem;
     .leftColumn {
       h1 {
         font-size: 55px;
@@ -190,7 +180,7 @@
       }
     }
     .heroSvg {
-      margin-top: -3rem;
+      margin-top: -6rem;
     }
   }
 }

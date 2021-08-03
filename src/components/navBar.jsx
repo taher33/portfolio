@@ -12,9 +12,10 @@ function NavBar() {
     <div className={container}>
       <h2 className={logo}>Latreche</h2>
       <div className={rigthSideNav}>
+        <span>home</span>
         <span>about</span>
         <span>my work</span>
-        <h4>get in touch</h4>
+        <h4>let's talk</h4>
       </div>
       <GiHamburgerMenu className={hamburger} />
     </div>

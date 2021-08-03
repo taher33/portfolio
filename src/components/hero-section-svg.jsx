@@ -1,8 +1,9 @@
 import React from "react";
 
-function HeroSvg({ heroSvg }) {
+function HeroSvg({ heroSvg, refrence }) {
   return (
     <svg
+      ref={refrence}
       width="704"
       height="704"
       viewBox="0 0 704 704"
