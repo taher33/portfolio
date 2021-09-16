@@ -7,7 +7,7 @@ import { container } from "../styles/projectSection.module.scss";
 function Projects() {
   const projects = ["1st", "2nd"];
   return (
-    <div className={container}>
+    <div id="projects" className={container}>
       <h2>my work</h2>
       {projects.map((el, index) => (
         <>

@@ -38,7 +38,7 @@ function ContactMe() {
   }
   return (
     <div className={bg}>
-      <div className={container}>
+      <div id="contact" className={container}>
         <h2>Contact Me</h2>
         <div className={flex}>
           <form onSubmit={sendEmail}>

@@ -4,7 +4,7 @@ import { container, leftColumn, svg } from "../styles/about.module.scss";
 
 function About() {
   return (
-    <div className={container}>
+    <div id="about" className={container}>
       <div className={leftColumn}>
         <h2>about me</h2>
         <p>

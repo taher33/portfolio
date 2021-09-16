@@ -1,4 +1,6 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
+import { motion } from "framer-motion";
+import { Link } from "react-scroll";
 import {
   container,
   leftColumn,
@@ -8,60 +10,48 @@ import {
 } from "../styles/landing.module.scss";
 import { FaChevronRight } from "react-icons/fa";
 import HeroSvg from "../components/hero-section-svg";
-import gsap from "gsap";
+
+//variants framer-mo
+const item = {
+  initial: {
+    opacity: 0,
+    y: 20,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
+  },
+};
 
 function Landing() {
-  const svg = useRef(null);
-  const header = useRef(null);
-  const paragraph = useRef(null);
-  const buttons = useRef(null);
-  useEffect(() => {
-    gsap.from(header.current, {
-      duration: 0.5,
-      y: "100px",
-      opacity: 0,
-      ease: "power4.out",
-    });
-    gsap.from(svg.current, {
-      duration: 0.7,
-      y: "50px",
-      opacity: 0,
-      ease: "power4.out",
-      delay: 0.3,
-    });
-    gsap.from(paragraph.current, {
-      duration: 0.7,
-      y: "50px",
-      opacity: 0,
-      ease: "power4.out",
-      delay: 0.6,
-    });
-    gsap.from(buttons.current, {
-      duration: 0.7,
-      y: "50px",
-      opacity: 0,
-      ease: "power4.out",
-      delay: 0.9,
-    });
-  }, []);
   return (
-    <section className={container}>
-      <div className={leftColumn}>
-        <h1 ref={header}>give your clients the web experience they deserve</h1>
-        <p ref={paragraph}>
+    <motion.section id="home" className={container}>
+      <motion.div
+        variants={{ show: { transition: { staggerChildren: 0.3 } } }}
+        initial="initial"
+        animate="show"
+        className={leftColumn}
+      >
+        <motion.h1 variants={item}>
+          give your clients the web experience they deserve
+        </motion.h1>
+        <motion.p variants={item}>
           get awesome designs, fluid frontends and secure backends for a deacent
           price
-        </p>
-        <div ref={buttons} className={callToAction}>
-          <button>Hire me</button>
+        </motion.p>
+        <motion.div variants={item} className={callToAction}>
+          <Link to="projects" smooth={true}>
+            <motion.button>my work</motion.button>
+          </Link>
           <span>
-            or see my work <FaChevronRight className={chevronIcon} />
+            ...or just get in contact <FaChevronRight className={chevronIcon} />
           </span>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
 
-      <HeroSvg refrence={svg} heroSvg={heroSvg} />
-    </section>
+      <HeroSvg heroSvg={heroSvg} />
+    </motion.section>
   );
 }
 

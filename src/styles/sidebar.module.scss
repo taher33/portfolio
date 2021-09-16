@@ -1,0 +1,21 @@
+.container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 100;
+
+  .sidebar {
+    // z-index: 11;
+    background-color: white;
+    height: 100vh;
+    padding: 5rem 0;
+    float: right;
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

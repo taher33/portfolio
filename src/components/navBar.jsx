@@ -1,5 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Link } from "react-scroll";
+import SideBar from "./sideBar";
+
 import {
   container,
   rigthSideNav,
@@ -8,16 +11,26 @@ import {
 } from "../styles/navBar.module.scss";
 
 function NavBar() {
+  const [open, setOpen] = useState(false);
   return (
     <div className={container}>
       <h2 className={logo}>Latreche</h2>
       <div className={rigthSideNav}>
-        <span>home</span>
-        <span>about</span>
-        <span>my work</span>
-        <h4>let's talk</h4>
+        <Link to="home" smooth={true}>
+          <span>home</span>
+        </Link>
+        <Link to="about" smooth={true}>
+          <span>about</span>
+        </Link>
+        <Link to="projects" smooth={true}>
+          <span>my work</span>
+        </Link>
+        <Link to="contact" smooth={true}>
+          <h4>let's talk</h4>
+        </Link>
       </div>
-      <GiHamburgerMenu className={hamburger} />
+      <GiHamburgerMenu onClick={() => setOpen(true)} className={hamburger} />
+      {open && <SideBar show={open} setShow={setOpen} />}
     </div>
   );
 }

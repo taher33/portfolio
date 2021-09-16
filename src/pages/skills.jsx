@@ -14,7 +14,7 @@ import { FiFigma } from "react-icons/fi";
 function Skills() {
   return (
     <div className={bg}>
-      <div className={container}>
+      <div id="skils" className={container}>
         <h2>Skills</h2>
         <div className={skills}>
           <div>

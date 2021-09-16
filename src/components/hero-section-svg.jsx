@@ -1,8 +1,18 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 function HeroSvg({ heroSvg, refrence }) {
   return (
-    <svg
+    <motion.svg
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.3 },
+      }}
       ref={refrence}
       width="704"
       height="704"
@@ -1047,7 +1057,7 @@ function HeroSvg({ heroSvg, refrence }) {
         d="M76.0321 276.855L74.5115 278.925L87.3384 295.694L89.1547 294.399L76.0321 276.855Z"
         fill="#7D8AFF"
       />
-    </svg>
+    </motion.svg>
   );
 }
 
