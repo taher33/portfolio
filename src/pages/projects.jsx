@@ -11,7 +11,7 @@ function Projects() {
       <h2>my work</h2>
       {projects.map((el, index) => (
         <>
-          <Project name={el} />
+          <Project key={index} name={el} />
           {index !== projects.length - 1 ? <Zigzag classN={zigzag} /> : null}
         </>
       ))}

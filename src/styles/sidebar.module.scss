@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .container {
   position: fixed;
   top: 0;
@@ -8,14 +10,51 @@
   z-index: 100;
 
   .sidebar {
-    // z-index: 11;
     background-color: white;
     height: 100vh;
-    padding: 5rem 0;
-    float: right;
-    width: 20rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: max-content;
+    max-width: 100vh;
+    margin-left: auto;
+    padding: 1rem 3rem;
+    position: relative;
+
+    .exit {
+      font-size: 2rem;
+      cursor: pointer;
+      position: absolute;
+      left: 1rem;
+    }
+
+    .links {
+      display: flex;
+      margin-top: 1rem;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 3rem 0;
+      text-align: left;
+      text-transform: capitalize;
+      span {
+        margin-bottom: 2rem;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        svg {
+          font-size: 1.4rem;
+          margin-right: 0.7rem;
+        }
+      }
+      h4 {
+        cursor: pointer;
+        color: $secondary-color-hover;
+        display: flex;
+        align-items: center;
+
+        svg {
+          font-size: 1.5rem;
+          margin-right: 0.51rem;
+        }
+      }
+    }
   }
 }

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Link } from "react-scroll";
+import { AnimatePresence } from "framer-motion";
+
 import SideBar from "./sideBar";
 
 import {
@@ -29,8 +31,11 @@ function NavBar() {
           <h4>let's talk</h4>
         </Link>
       </div>
+
       <GiHamburgerMenu onClick={() => setOpen(true)} className={hamburger} />
-      {open && <SideBar show={open} setShow={setOpen} />}
+      <AnimatePresence>
+        {open && <SideBar show={open} setShow={setOpen} />}
+      </AnimatePresence>
     </div>
   );
 }
