@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 import emailjs from "emailjs-com";
+import Dialog from "../components/Dialog";
 import {
   AiFillFacebook,
   AiFillInstagram,
@@ -15,10 +17,16 @@ import {
   flex,
   icons,
 } from "../styles/contact.module.scss";
+import Loader from "../components/Loader";
 
 function ContactMe() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [failure, setFailure] = useState(false);
+
   function sendEmail(e) {
     e.preventDefault();
+    setLoading(true);
 
     emailjs
       .sendForm(
@@ -29,12 +37,15 @@ function ContactMe() {
       )
       .then(
         (result) => {
-          console.log(result.text);
+          setSuccess(true);
         },
         (error) => {
-          console.log(error.text);
+          setFailure(true);
         }
-      );
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   }
   return (
     <div className={bg}>
@@ -48,10 +59,29 @@ function ContactMe() {
             <input type="text" name="email" />
             <label htmlFor="message"> message</label>
             <textarea name="message" id="" cols="20" rows="10"></textarea>
-            <button type="submit">send message</button>
+            {loading ? <Loader /> : <button type="submit">send message</button>}
+            <AnimatePresence>
+              {success && (
+                <Dialog
+                  show={success}
+                  setShow={setSuccess}
+                  content="your message was sent successfuly"
+                />
+              )}
+              {failure && (
+                <Dialog
+                  show={failure}
+                  setShow={setFailure}
+                  content="sorry but something went wrong, try and contact me using my email"
+                />
+              )}
+            </AnimatePresence>
           </form>
           <div className={rightColumn}>
-            <p>Hi , let’s talk about improving or creating a website for you</p>
+            <p>
+              Let’s start working on your new or existing business websites
+              today!
+            </p>
             <div>
               <AiFillPhone />
               <span>0666962795</span>

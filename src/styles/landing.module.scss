@@ -65,9 +65,8 @@
     }
   }
   .heroSvg {
-    width: 16rem;
-    z-index: -4;
-    margin: -14rem auto;
+    width: 90%;
+    margin: 0rem auto;
   }
 }
 
@@ -90,7 +89,7 @@
       }
     }
     .heroSvg {
-      width: 20rem;
+      width: 80%;
     }
   }
 }
@@ -110,8 +109,7 @@
       }
     }
     .heroSvg {
-      width: 50%;
-      margin-top: -10rem;
+      width: 70%;
     }
   }
 }
@@ -120,12 +118,13 @@
   .container {
     padding: 0 $padding-laptop;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
-
+    // margin-bottom: 3rem;
+    margin-top: 0rem;
     .leftColumn {
       text-align: left;
       margin-top: 1rem;
-      margin-bottom: 3rem;
 
       h1 {
         font-size: 40px;
@@ -152,8 +151,7 @@
       }
     }
     .heroSvg {
-      width: 50%;
-      // margin: -1rem 0;
+      width: 45%;
     }
   }
 }
@@ -175,7 +173,6 @@
       }
     }
     .heroSvg {
-      margin-top: -6rem;
     }
   }
 }

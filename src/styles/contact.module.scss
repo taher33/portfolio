@@ -1,6 +1,7 @@
 @import "variables.scss";
 .bg {
   background-color: #131313;
+  position: relative;
 }
 .container {
   max-width: $max-container-width;
@@ -55,7 +56,7 @@
 
     button {
       font-family: "Montserrat";
-      color: #2b2b2b;
+      color: black;
       border: none;
       outline: none;
       font-weight: bold;
@@ -65,6 +66,11 @@
       background-color: $primary-color;
       margin: 1rem 0;
       cursor: pointer;
+      text-transform: capitalize;
+      transition: background-color 0.3s ease;
+      &:hover {
+        background-color: $primary-color-hover;
+      }
     }
   }
   .rightColumn {
@@ -72,6 +78,7 @@
     p {
       font-size: 24px;
       margin-bottom: 2rem;
+      font-weight: 500;
     }
     div {
       display: flex;
@@ -103,6 +110,24 @@
     .flex {
       display: grid;
       grid-template-columns: 1fr 1fr;
+    }
+
+    .rightColumn {
+      div {
+        font-size: 18px;
+      }
+      .icons {
+        margin-top: 2rem;
+        a {
+          height: 30px;
+          width: 30px;
+          margin-right: 1rem;
+          svg {
+            color: white;
+            font-size: 30px;
+          }
+        }
+      }
     }
   }
 }

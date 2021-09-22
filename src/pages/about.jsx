@@ -12,7 +12,7 @@ function About() {
           coding practice. Presently working with mern stack. Has done some
           great frontend work next.js. A Flexible Developer who can work on
           different stacks, but his passion lies in React. Lives in Algeria and
-          my hobies are playing chess doing sports
+          my hobies are playing chess and doing sports.
         </p>
       </div>
       <AboutmeSvg classN={svg} />

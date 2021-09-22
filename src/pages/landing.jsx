@@ -50,7 +50,20 @@ function Landing() {
         </motion.div>
       </motion.div>
 
-      <HeroSvg heroSvg={heroSvg} />
+      <motion.img
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.3 },
+        }}
+        className={heroSvg}
+        src="/heroImg.png"
+        alt="ullistration"
+      />
     </motion.section>
   );
 }
