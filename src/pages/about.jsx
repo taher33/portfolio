@@ -8,10 +8,11 @@ function About() {
       <div className={leftColumn}>
         <h2>about me</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam
-          tincidunt maecenas vivamus felis lorem adipiscing sed egestas.
-          Venenatis diam velit faucibus faucibus. Enim eleifend massa, mauris ut
-          non ac. Ac in arcu odio amet, cursus pretium sed
+          Expertise in React js, Server side nodejs. A great follower of good
+          coding practice. Presently working with mern stack. Has done some
+          great frontend work next.js. A Flexible Developer who can work on
+          different stacks, but his passion lies in React. Lives in Algeria and
+          my hobies are playing chess doing sports
         </p>
       </div>
       <AboutmeSvg classN={svg} />

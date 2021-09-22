@@ -118,15 +118,15 @@
 
 @media (min-width: 1000px) {
   .container {
-    margin-top: 0rem;
     padding: 0 $padding-laptop;
     flex-direction: row;
     justify-content: space-between;
 
     .leftColumn {
       text-align: left;
+      margin-top: 1rem;
+      margin-bottom: 3rem;
 
-      margin: 0rem 0;
       h1 {
         font-size: 40px;
         max-width: 30rem;
@@ -157,7 +157,7 @@
     }
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1400px) {
   .container {
     margin-top: 3rem;
     .leftColumn {
