@@ -21,9 +21,19 @@ function Projects() {
       title: "legate",
       description:
         "Legate is a messaging platform for companies and individuals. It's fast, safe and available everywhere created with the latest technologies next js, sass for the frontend and socketIO, mongodb for the backend",
-      tech: ["next js", "framer motion", "socketIO", "mongodb"],
+      tech: ["next js", "sass", "socketIO", "mongodb"],
       github: "https://github.com/taher33/chat-app",
       img: "legate.png",
+      alt: "image of website",
+    },
+    {
+      url: "https://social-media-taher.vercel.app/",
+      title: "Pacebook",
+      description:
+        "pacebook is a social media app that offers a new way to chat with friends, family and people nearby. Drawing inspiration from both facebook and twitter I made this web app using the MERN stack as my first real big project",
+      tech: ["react", "node", "express", "mongodb"],
+      github: "https://github.com/taher33/fashion-ecommerce-frontend",
+      img: "socialapp2.png",
       alt: "image of website",
     },
   ];
