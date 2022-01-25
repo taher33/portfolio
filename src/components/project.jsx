@@ -34,12 +34,14 @@ function Project({ data }) {
           </a>
         </div>
       </div>
-      <img
-        src={data.img}
-        data-aos="zoom-in"
-        data-aos-duration="3000"
-        alt={data.alt}
-      />
+      <a target="_blank" rel="noreferrer" href={data.url}>
+        <img
+          src={data.img}
+          data-aos="zoom-in"
+          data-aos-duration="3000"
+          alt={data.alt}
+        />
+      </a>
     </div>
   );
 }
