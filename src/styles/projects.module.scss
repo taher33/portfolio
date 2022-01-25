@@ -62,11 +62,13 @@
       }
     }
   }
-
-  img {
+  .linkToSite {
     width: 100%;
     max-width: 700px;
     margin: 2rem auto;
+    img {
+      width: 100%;
+    }
   }
 }
 

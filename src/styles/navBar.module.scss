@@ -57,8 +57,12 @@
         margin-right: 3rem;
         font-size: 16px;
         text-transform: capitalize;
+        color: rgb(131, 131, 131);
+        transition: color 0.2s ease;
+        font-weight: 400;
         &:hover {
           cursor: pointer;
+          color: black;
         }
       }
     }

@@ -9,18 +9,21 @@ import {
   callToAction,
 } from "../styles/landing.module.scss";
 import { FaChevronRight } from "react-icons/fa";
-import HeroSvg from "../components/hero-section-svg";
 
 //variants framer-mo
 const item = {
   initial: {
     opacity: 0,
-    y: 20,
+    y: 40,
+    transform: "translate3d(0,100%,0)",
+    clipPath: "polygon(0 0, 100% 0, 100% 11%, 0 11%)",
   },
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6 },
+    transition: { ease: "easeInOut", duration: 1 },
+    transform: "translate(0px,0)",
+    clipPath: "polygon(-100% 0, 100% 0, 150% 100%, 0 100%)",
   },
 };
 
@@ -28,7 +31,7 @@ function Landing() {
   return (
     <motion.section id="home" className={container}>
       <motion.div
-        variants={{ show: { transition: { staggerChildren: 0.3 } } }}
+        variants={{ show: { transition: { staggerChildren: 0.6 } } }}
         initial="initial"
         animate="show"
         className={leftColumn}
@@ -42,7 +45,11 @@ function Landing() {
         </motion.p>
         <motion.div variants={item} className={callToAction}>
           <Link to="projects" smooth={true}>
-            <motion.button>my work</motion.button>
+            <motion.button
+              whileHover={{ scale: 1.2, transition: { ease: "backInOut" } }}
+            >
+              see my work
+            </motion.button>
           </Link>
           <span>
             ...or just get in contact <FaChevronRight className={chevronIcon} />
@@ -53,12 +60,12 @@ function Landing() {
       <motion.img
         initial={{
           opacity: 0,
-          y: 20,
+          y: 40,
         }}
         animate={{
           opacity: 1,
           y: 0,
-          transition: { duration: 0.3 },
+          transition: { duration: 0.7 },
         }}
         className={heroSvg}
         src="/heroImg.png"

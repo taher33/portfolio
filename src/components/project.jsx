@@ -5,6 +5,7 @@ import {
   title,
   footer,
   githubIcon,
+  linkToSite,
 } from "../styles/projects.module.scss";
 import { AiOutlineGithub } from "react-icons/ai";
 import { CgWebsite } from "react-icons/cg";
@@ -34,7 +35,12 @@ function Project({ data }) {
           </a>
         </div>
       </div>
-      <a target="_blank" rel="noreferrer" href={data.url}>
+      <a
+        className={linkToSite}
+        target="_blank"
+        rel="noreferrer"
+        href={data.url}
+      >
         <img
           src={data.img}
           data-aos="zoom-in"

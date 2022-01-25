@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 .container {
-  max-width: $max-container-width;
+  // max-width: $max-container-width;
   padding: $padding-phone;
   text-align: center;
   font-family: "Montserrat";
@@ -12,15 +12,16 @@
 
   .leftColumn {
     h1 {
-      font-size: 1.8rem;
+      font-size: 2rem;
       text-transform: capitalize;
-      max-width: 20rem;
-      margin: 1.5rem auto;
+      max-width: 25rem;
+      margin: 3rem auto 2rem;
       font-weight: 700;
     }
     p {
-      font-size: 1rem;
-      max-width: 15rem;
+      color: rgb(53, 53, 53);
+      font-size: 1.3rem;
+      max-width: 25rem;
       margin: 1rem auto;
     }
     .callToAction {
@@ -29,14 +30,16 @@
       align-items: center;
       button {
         font-family: "Montserrat";
-        color: white;
-        font-weight: bold;
+        color: rgb(0, 0, 0);
+        font-weight: 500;
         font-size: 1.2rem;
         border: none;
         background-color: $primary-color;
-        padding: 0.8rem 3rem;
+        padding: 0.8rem 2rem;
+        text-transform: capitalize;
         border-radius: 0.7rem;
-        margin-top: 1.2rem;
+        margin-top: 1.6rem;
+        margin-bottom: 1.2rem;
         transition: all ease 0.3s;
 
         &:hover {
@@ -51,7 +54,9 @@
         font-weight: 600;
 
         .chevronIcon {
-          color: $primary-color;
+          background-color: $secondary-color-hover;
+          padding: 0.2rem;
+          color: white;
           margin-left: 0.5rem;
           transition: transform 0.3s ease-out;
           border-radius: 50%;
@@ -118,15 +123,15 @@
   .container {
     padding: 0 $padding-laptop;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    // margin-bottom: 3rem;
     margin-top: 0rem;
+    max-width: fit-content;
     .leftColumn {
       text-align: left;
-      margin-top: 1rem;
-
+      margin-top: 4rem;
+      width: max-content;
       h1 {
+        margin-left: 0;
         font-size: 40px;
         max-width: 30rem;
         margin-bottom: 1.3rem;
@@ -141,7 +146,7 @@
         flex-direction: row;
         align-items: baseline;
         button {
-          font-size: 1.6rem;
+          font-size: 1.2rem;
           padding: 0.9rem 2.5rem;
         }
         span {
