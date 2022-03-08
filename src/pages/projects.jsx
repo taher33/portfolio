@@ -20,7 +20,7 @@ function Projects() {
       url: "https://chat-app-latrehe.vercel.app/",
       title: "legate",
       description:
-        "Legate is a messaging platform for companies and individuals. It's fast, safe and available everywhere created with the latest technologies next js, sass for the frontend and socketIO, mongodb for the backend",
+        "Legate is a messaging platform for companies and individuals. git It's fast, safe and available everywhere created with the latest technologies next js, sass for the frontend",
       tech: ["next js", "sass", "socketIO", "mongodb"],
       github: "https://github.com/taher33/chat-app",
       img: "legate.png",
@@ -34,6 +34,16 @@ function Projects() {
       tech: ["react", "node", "express", "mongodb"],
       github: "https://github.com/taher33/fashion-ecommerce-frontend",
       img: "socialapp2.png",
+      alt: "image of website",
+    },
+    {
+      url: "https://web-shop-seven.vercel.app/",
+      title: "market place",
+      description:
+        "market place that allows its clients to either buy products or sell them by creating listings on the website and interacting with their clients or sellers using our built in chat",
+      tech: ["react", "node", "express", "mongodb", "socketio"],
+      github: "https://github.com/taher33/market-place-client",
+      img: "marketPlace.png",
       alt: "image of website",
     },
   ];

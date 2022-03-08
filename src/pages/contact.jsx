@@ -84,11 +84,11 @@ function ContactMe() {
             </p>
             <div>
               <AiFillPhone />
-              <span>0666962795</span>
+              <span>0553545114</span>
             </div>
             <div>
               <MdEmail />
-              <span>taherhehe@gmail.com</span>
+              <span>latrechemedtaher@gmail.com</span>
             </div>
             <div className={icons}>
               <a
