@@ -41,7 +41,7 @@ function Projects() {
       title: "market place",
       description:
         "market place that allows its clients to either buy products or sell them by creating listings on the website and interacting with their clients or sellers using our built in chat",
-      tech: ["react", "node", "express", "mongodb", "socketio"],
+      tech: ["react", "express", "mongodb", "socketio"],
       github: "https://github.com/taher33/market-place-client",
       img: "marketPlace.png",
       alt: "image of website",

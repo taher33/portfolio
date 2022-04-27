@@ -84,7 +84,7 @@ function ContactMe() {
             </p>
             <div>
               <AiFillPhone />
-              <span>0553545114</span>
+              <span>+213553545114</span>
             </div>
             <div>
               <MdEmail />

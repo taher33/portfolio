@@ -20,15 +20,14 @@
         font-weight: bold;
         text-transform: capitalize;
       }
-      .linkIcon {
-        font-size: 24px;
-      }
+
     }
     p {
       font-size: 14px;
       font-weight: 400;
-      color: #505050;
+      color: #313131;
       margin-bottom: 1.3rem;
+      line-height: 150%;
     }
     .footer {
       font-size: 18px;
@@ -47,14 +46,13 @@
         color: #070707;
         height: 18px;
         margin-bottom: 0;
-
         text-decoration: none;
       }
       span {
         text-transform: capitalize;
         font-size: 12px;
         font-weight: 600;
-        margin-right: 1rem;
+        margin-right: .3em;
         color: #505050;
         background-color: $primary-color;
         padding: 0.1rem 0.3rem;

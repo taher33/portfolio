@@ -1,7 +1,7 @@
 @import "variables.scss";
 
 .container {
-  // max-width: $max-container-width;
+  max-width: $max-container-width;
   padding: $padding-phone;
   text-align: center;
   font-family: "Montserrat";
@@ -31,12 +31,11 @@
       button {
         font-family: "Montserrat";
         color: rgb(0, 0, 0);
-        font-weight: 500;
+        font-weight: 400;
         font-size: 1.2rem;
         border: none;
         background-color: $primary-color;
         padding: 0.8rem 2rem;
-        text-transform: capitalize;
         border-radius: 0.7rem;
         margin-top: 1.6rem;
         margin-bottom: 1.2rem;
@@ -125,14 +124,14 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 0rem;
-    max-width: fit-content;
+    align-items: center;
     .leftColumn {
       text-align: left;
-      margin-top: 4rem;
+      // margin-top: 4rem;
       width: max-content;
       h1 {
         margin-left: 0;
-        font-size: 40px;
+        font-size: 44px;
         max-width: 30rem;
         margin-bottom: 1.3rem;
       }
@@ -165,7 +164,7 @@
     margin-top: 3rem;
     .leftColumn {
       h1 {
-        font-size: 55px;
+        font-size: 50px;
         max-width: 45rem;
       }
       p {
@@ -173,7 +172,7 @@
       }
       .callToAction {
         button {
-          font-size: 30px;
+          font-size: 18px;
         }
       }
     }

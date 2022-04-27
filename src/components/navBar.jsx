@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { RiMenu3Fill } from "react-icons/ri";
 import { Link } from "react-scroll";
 import { AnimatePresence } from "framer-motion";
 
@@ -16,7 +16,7 @@ function NavBar() {
   const [open, setOpen] = useState(false);
   return (
     <div className={container}>
-      <h2 className={logo}>Latreche</h2>
+      <h2 className={logo}>Latreche Taher</h2>
       <div className={rigthSideNav}>
         <Link to="home" smooth={true}>
           <span>home</span>
@@ -32,7 +32,7 @@ function NavBar() {
         </Link>
       </div>
 
-      <GiHamburgerMenu onClick={() => setOpen(true)} className={hamburger} />
+      <RiMenu3Fill onClick={() => setOpen(true)} className={hamburger} />
       <AnimatePresence>
         {open && <SideBar show={open} setShow={setOpen} />}
       </AnimatePresence>

@@ -8,7 +8,7 @@ import {
   chevronIcon,
   callToAction,
 } from "../styles/landing.module.scss";
-import { FaChevronRight } from "react-icons/fa";
+import { AiOutlineArrowDown } from "react-icons/ai";
 
 //variants framer-mo
 const item = {
@@ -37,7 +37,7 @@ function Landing() {
         className={leftColumn}
       >
         <motion.h1 variants={item}>
-          give your clients the web experience they deserve
+          Turning your ideas into real world projects
         </motion.h1>
         <motion.p variants={item}>
           get awesome designs, fluid frontends and secure backends for a deacent
@@ -52,7 +52,8 @@ function Landing() {
             </motion.button>
           </Link>
           <span>
-            ...or just get in contact <FaChevronRight className={chevronIcon} />
+            ...or just get in contact{" "}
+            <AiOutlineArrowDown className={chevronIcon} />
           </span>
         </motion.div>
       </motion.div>
