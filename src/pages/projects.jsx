@@ -7,6 +7,17 @@ import { container } from "../styles/projectSection.module.scss";
 function Projects() {
   const projects = [
     {
+      url: "https://web-shop-seven.vercel.app/",
+      title: "market place",
+      description:
+        "market place that allows its clients to either buy products or sell them by creating listings on the website and interacting with their clients or sellers using our built in chat",
+      tech: ["react", "express", "mongodb", "socketio"],
+      github: "https://github.com/taher33/market-place-client",
+      img: "marketPlace.png",
+      alt: "image of website",
+    },
+
+    {
       url: "https://fashion-ecommerce-lime.vercel.app/",
       title: "clothing online shop",
       description:
@@ -16,6 +27,7 @@ function Projects() {
       img: "./project-ecomerc.png",
       alt: "image of website",
     },
+    
     {
       url: "https://chat-app-latrehe.vercel.app/",
       title: "legate",
@@ -36,16 +48,7 @@ function Projects() {
       img: "socialapp2.png",
       alt: "image of website",
     },
-    {
-      url: "https://web-shop-seven.vercel.app/",
-      title: "market place",
-      description:
-        "market place that allows its clients to either buy products or sell them by creating listings on the website and interacting with their clients or sellers using our built in chat",
-      tech: ["react", "express", "mongodb", "socketio"],
-      github: "https://github.com/taher33/market-place-client",
-      img: "marketPlace.png",
-      alt: "image of website",
-    },
+    
   ];
   return (
     <div id="projects" className={container}>
