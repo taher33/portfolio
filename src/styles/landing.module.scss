@@ -57,13 +57,8 @@
           padding: 0.2rem;
           color: white;
           margin-left: 0.5rem;
-          transition: transform 0.3s ease-out;
           border-radius: 50%;
-          &:hover {
-            transform: scale(1.35);
-            cursor: pointer;
-            // border: 1px $primary-color solid;
-          }
+          
         }
       }
     }
@@ -176,7 +171,6 @@
         }
       }
     }
-    .heroSvg {
-    }
+    
   }
 }
