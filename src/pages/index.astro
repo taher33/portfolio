@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import FloatingBox from "../components/SmallBox.astro";
 import { Picture } from "astro:assets";
 import iconImage from "../assets/icon.png";
+import resume from "../assets/resumeicon.png";
 import { Config } from "../config";
 
 const years = () => {
@@ -71,6 +72,21 @@ const posts = (await getCollection("posts")).sort(function (
             </div>
           </div>
         </div>
+        <div>
+          <a
+            href="#"
+            class="flex items-center gap-2 hover:underline"
+            id="downloadBtn"
+          >
+            Download resume <Picture
+              class="w-4"
+              src={resume}
+              formats={["avif", "webp"]}
+              alt="Resume icon"
+              loading="eager"
+            />
+          </a>
+        </div>
       </article>
 
       <!-- <article class="flex flex-col gap-8">
@@ -133,3 +149,24 @@ const posts = (await getCollection("posts")).sort(function (
     </div>
   </main>
 </Layout>
+
+<script>
+  function downloadPDF() {
+    const pdfUrl = "public/Resume.pdf";
+
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "document.pdf"; // Name of the downloaded file
+    link.target = "_blank"; // Open in a new tab
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  }
+
+  // Attach click event listener to the button
+  document
+    .getElementById("downloadBtn")
+    ?.addEventListener("click", downloadPDF);
+</script>
