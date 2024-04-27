@@ -1,0 +1,60 @@
+---
+interface Props {
+  title: string;
+  publishedAt?: Date;
+  description?: string;
+  href: string;
+  tags?: string[];
+}
+
+const { title, publishedAt, description, href, tags } = Astro.props;
+---
+
+<a
+  href={href}
+  target={href.startsWith("http") ? "_blank" : "_self"}
+  class="group flex cursor-pointer flex-col gap-2 rounded-md border border-neutral p-4 transition-all duration-300 hover:-translate-y-1.5"
+  data-astro-prefetch
+>
+  <div class="flex w-full justify-between gap-3 flex-row items-start">
+    <p class="font-semibold">{title}</p>
+    <div class="flex flex-row items-center gap-2">
+      {
+        publishedAt ? (
+          <p class="text-neutral whitespace-nowrap">
+            {new Date(publishedAt).toLocaleDateString("en-us", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </p>
+        ) : null
+      }
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#94a0a9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        color="#94a0a9"
+        class="tabler-icon tabler-icon-arrow-up-right transition-none md:transition-all md:duration-300 md:group-hover:translate-x-1"
+      >
+        <path d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path>
+      </svg>
+    </div>
+  </div>
+  {
+    tags ? (
+      <div class="pt-1 flex flex-row flex-wrap gap-2">
+        {tags.map((item) => (
+          <div class="badge badge-neutral">{item}</div>
+        ))}
+      </div>
+    ) : (
+      <p class="truncate">{description}</p>
+    )
+  }
+</a>

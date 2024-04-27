@@ -1,0 +1,135 @@
+---
+import Layout from "../layouts/Layout.astro";
+import FloatingBox from "../components/SmallBox.astro";
+import { Picture } from "astro:assets";
+import iconImage from "../assets/icon.png";
+import { Config } from "../config";
+
+const years = () => {
+  const start = new Date(Config.me.started);
+  const now = new Date();
+  return now.getFullYear() - start.getFullYear();
+};
+
+import { getCollection } from "astro:content";
+const posts = (await getCollection("posts")).sort(function (
+  first: any,
+  second: any
+) {
+  return second.data.publishedAt.getTime() - first.data.publishedAt.getTime();
+});
+---
+
+<Layout>
+  <main>
+    <div class="flex flex-col gap-20">
+      <article class="md:flex-row-reverse md:justify-end md:gap-12">
+        <div class="flex flex-row justify-between sm:grid-cols-3">
+          <div class="col-span-2 flex flex-col gap-6 md:gap-8 my-auto">
+            <h1 class="text-3xl">Hi, I’m {Config.me.name.split(" ")[0]}</h1>
+            <h2 class="w-auto sm:w-[85%] md:w-[90%] leading-6">
+              I am a <strong class="font-normal text-primary"
+                >{Config.me.job}</strong
+              > with
+              <strong class="font-normal text-primary">{years} years</strong> of
+              experience. I am currently working with<strong
+                class="font-normal text-primary"
+              >
+                {Config.me.stack}</strong
+              >. Outside of programming I like to {Config.me.hobby}.
+            </h2>
+            <div class="custom-breadcrumbs">
+              <ul>
+                {
+                  Object.keys(Config.socials).map((social) => (
+                    <li>
+                      <a
+                        href={
+                          Config.socials[social as keyof typeof Config.socials]
+                        }
+                        rel="noreferrer"
+                        target="_blank"
+                      >
+                        {social.charAt(0).toUpperCase() + social.slice(1)}
+                      </a>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+          </div>
+          <div class="ml-auto hidden sm:block">
+            <div class="avatar">
+              <div class="w-60 rounded">
+                <Picture
+                  src={iconImage}
+                  formats={["avif", "webp"]}
+                  alt="Profile icon"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- <article class="flex flex-col gap-8">
+        <header class="flex w-full flex-row justify-between gap-2">
+          <h3 class="text-lg">Featured projects</h3>
+          <a
+            href={Config.me.projectLink}
+            class="text-sm text-primary underline decoration-dashed underline-offset-8"
+            target="_self"
+            rel="noreferrer"
+            >See all projects
+          </a>
+        </header>
+        <section
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 justify-center items-stretch"
+        >
+          {
+            Object.keys(Config.projects).map((project) => (
+              <FloatingBox
+                title={project}
+                href={
+                  Config.projects[project as keyof typeof Config.projects].url
+                }
+                tags={
+                  Config.projects[project as keyof typeof Config.projects].tags
+                }
+              />
+            ))
+          }
+        </section>
+      </article> -->
+
+      <article class="flex flex-col gap-8">
+        <header class="flex w-full flex-row justify-between gap-2">
+          <h3 class="text-lg">Latest posts</h3>
+          <a
+            href="/posts"
+            class="text-sm text-primary underline decoration-dashed underline-offset-8"
+            rel="noreferrer"
+            >See all posts
+          </a>
+        </header>
+        <section class="grid grid-cols-1 gap-4 sm:grid-cols-2 mx-auto">
+          {
+            posts.map((post: any) => (
+              <FloatingBox
+                title={post.data.title}
+                publishedAt={post.data.publishedAt.toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+                description={post.data.description}
+                href={"/posts/" + post.slug}
+              />
+            ))
+          }
+        </section>
+      </article>
+    </div>
+  </main>
+</Layout>

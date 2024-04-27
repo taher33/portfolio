@@ -1,0 +1,50 @@
+---
+interface Props {
+  title: string;
+  publishedAt: Date;
+  description?: string;
+  href: string;
+  tags?: string[];
+}
+
+const { title, publishedAt, description, href } = Astro.props;
+---
+
+<a
+  class="group flex cursor-pointer flex-col gap-2 p-4"
+  href={`/posts/${href}`}
+  data-astro-prefetch
+>
+  <div class="flex w-full justify-between gap-2 flex-row items-center">
+    <p class="text-base-content font-semibold">{title}</p>
+    <div class="flex flex-row items-center gap-4">
+      <p class="text-neutral">
+        {
+          new Date(publishedAt).toLocaleDateString("en-us", {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          })
+        }
+      </p>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#94a0a9"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        color="#94a0a9"
+        class="tabler-icon tabler-icon-arrow-up-right transition-none md:transition-all md:duration-300 md:group-hover:translate-x-1"
+      >
+        <>
+          <path d="M17 7l-10 10"></path>
+          <path d="M8 7l9 0l0 9"></path>
+        </>
+      </svg>
+    </div>
+  </div>
+  <p class="truncate">{description}</p>
+</a>

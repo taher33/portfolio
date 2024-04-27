@@ -1,0 +1,35 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+interface Props {
+  post: CollectionEntry<"posts">;
+}
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  og_title={post.data.title}
+  og_description={post.data.description}
+  og_type="article"
+>
+  <article class="prose mx-auto flex w-full max-w-prose flex-col gap-4">
+    <h1 class="mb-0">
+      {post.data.title}
+    </h1>
+    <p class="mt-0 mb-1">{post.data.description}</p>
+    <div class="divider m-0"></div>
+    <Content />
+  </article>
+</Layout>
