@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import FloatingBox from "../components/SmallBox.astro";
 import { Picture } from "astro:assets";
 import iconImage from "../assets/icon.png";
+import copyImage from "../assets/copy.png";
+import checkImage from "../assets/check.png";
 import resume from "../assets/resumeicon.png";
 import { Config } from "../config";
 
@@ -87,6 +89,18 @@ const posts = (await getCollection("posts")).sort(function (
             />
           </a>
         </div>
+        <div>
+          <span>latrechemedtaher@gmail.com</span>
+          <button id="copy-email">
+            <Picture
+              class="w-4"
+              src={copyImage}
+              formats={["avif", "webp"]}
+              alt="copy"
+              loading="eager"
+            />
+          </button>
+        </div>
       </article>
 
       <!-- <article class="flex flex-col gap-8">
@@ -148,25 +162,42 @@ const posts = (await getCollection("posts")).sort(function (
       </article>
     </div>
   </main>
+
+  <script>
+    function downloadPDF() {
+      const pdfUrl = "public/Resume.pdf";
+
+      const link = document.createElement("a");
+      link.href = pdfUrl;
+      link.download = "document.pdf"; // Name of the downloaded file
+      link.target = "_blank"; // Open in a new tab
+      document.body.appendChild(link);
+
+      link.click();
+
+      document.body.removeChild(link);
+    }
+
+    function copyToClipBoard() {
+      navigator.clipboard.writeText("latrechemedtaher@gmail.com");
+
+      // const btn = document.getElementById("copy-email");
+      // if (!btn) {
+      //   return;
+      // }
+      // btn.innerHTML = "";
+      // const image = document.createElement("img");
+      // image.className = "w-4";
+      // image.src = "";
+      // btn.appendChild(image);
+    }
+
+    document
+      .getElementById("copy-email")
+      ?.addEventListener("click", copyToClipBoard);
+    // Attach click event listener to the button
+    document
+      .getElementById("downloadBtn")
+      ?.addEventListener("click", downloadPDF);
+  </script>
 </Layout>
-
-<script>
-  function downloadPDF() {
-    const pdfUrl = "public/Resume.pdf";
-
-    const link = document.createElement("a");
-    link.href = pdfUrl;
-    link.download = "document.pdf"; // Name of the downloaded file
-    link.target = "_blank"; // Open in a new tab
-    document.body.appendChild(link);
-
-    link.click();
-
-    document.body.removeChild(link);
-  }
-
-  // Attach click event listener to the button
-  document
-    .getElementById("downloadBtn")
-    ?.addEventListener("click", downloadPDF);
-</script>
