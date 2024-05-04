@@ -89,7 +89,8 @@ const posts = (await getCollection("posts")).sort(function (
             />
           </a>
         </div>
-        <div>
+        <div class="py-2"></div>
+        <div class="flex items-center gap-2">
           <span>latrechemedtaher@gmail.com</span>
           <button id="copy-email">
             <Picture
@@ -166,7 +167,7 @@ const posts = (await getCollection("posts")).sort(function (
   <script>
     function downloadPDF() {
       const pdfUrl = "Resume.pdf";
-      console.log("this is happening");
+
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "document.pdf"; // Name of the downloaded file
