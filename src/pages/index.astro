@@ -165,8 +165,8 @@ const posts = (await getCollection("posts")).sort(function (
 
   <script>
     function downloadPDF() {
-      const pdfUrl = "public/Resume.pdf";
-
+      const pdfUrl = "Resume.pdf";
+      console.log("this is happening");
       const link = document.createElement("a");
       link.href = pdfUrl;
       link.download = "document.pdf"; // Name of the downloaded file
