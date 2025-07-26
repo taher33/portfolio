@@ -29,13 +29,13 @@ const posts = (await getCollection("posts")).sort(function (
       <article class="md:flex-row-reverse md:justify-end md:gap-12">
         <div class="flex flex-row justify-between sm:grid-cols-3">
           <div class="col-span-2 flex flex-col gap-6 md:gap-8 my-auto">
-            <h1 class="text-3xl">Hi, I’m {Config.me.name.split(" ")[0]}</h1>
+            <h1 class="text-3xl">Hi, I’m {Config.me.name.split(" ")[2]}</h1>
             <h2 class="w-auto sm:w-[85%] md:w-[90%] leading-6">
               I am a <strong class="font-normal text-primary"
                 >{Config.me.job}</strong
               > with
               <strong class="font-normal text-primary">{years} years</strong> of
-              experience. I am currently working with<strong
+              experience. I am currently working as a<strong
                 class="font-normal text-primary"
               >
                 {Config.me.stack}</strong

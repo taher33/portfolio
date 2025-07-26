@@ -33,7 +33,7 @@ export const Config: IConfig = {
     projectLink: "https://github.com/taher33?tab=repositories",
   },
   socials: {
-    twitter: "https://twitter.com/LatrecheTaher",
+    linkedin: "https://www.linkedin.com/in/taher-latreche-49b91422a/",
     github: "https://github.com/taher33",
     "dev.to": "https://dev.to/taher33",
   },
